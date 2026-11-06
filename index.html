@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Louis Fourage – Chef de projet Data / Data Analyst freelance</title>
+<meta name="description" content="Portfolio de Louis Fourage, Chef de projet Data et Data Analyst freelance à Nantes : cadrage, gouvernance de la donnée, reporting Power BI, outils métiers.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1f3a5f">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Louis Fourage – Chef de projet Data / Data Analyst freelance">
+<meta property="og:description" content="Cadrage, gouvernance de la donnée, reporting Power BI et outils métiers. Basé à Nantes.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f3a5f'/%3E%3Ctext x='32' y='43' font-family='Segoe UI,Arial,sans-serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'%3ELF%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Louis Fourage","jobTitle":"Chef de projet Data / Data Analyst freelance","email":"louis.fourage@catalise.eu","telephone":"+33631618850","address":{"@type":"PostalAddress","addressLocality":"Nantes","addressCountry":"FR"},"sameAs":["https://www.linkedin.com/in/louisfourage/"]}</script>
+<script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}</script>
+<style>
+:root{
+  --navy:#1f3a5f; --acc:#2e75b6; --acc-soft:#e8f1fa; --txt:#222a35; --mut:#5b6673; --line:#d9e0e8; --bg:#f6f8fb; --card:#fff;
+  --g-catalise:#2e75b6; --g-micro:#0e7c7b; --g-suez:#1f3a5f; --g-airbus:#7a5c99; --g-autre:#7b8794;
+  --radius:12px;
+  --head:#1f3a5f; --on-acc:#fff; --pil-bg:#1f3a5f; --pil-txt:#fff; --lv-bg:#e4ecf6;
+  --chip-bg:#fafbfc; --chip-line:#b9cfe6; --nav-bg:rgba(255,255,255,.95); --grid:#eef1f5;
+  --warn-bg:#fff7e0; --warn-line:#f0d88a; --warn-btn:#c9a53a; --bar-txt:#fff;
+  color-scheme:light;
+}
+@media screen{
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --acc:#4a90d9; --acc-soft:#1c2c42; --txt:#e6ebf2; --mut:#9aa7b6; --line:#2c3948; --bg:#0f141b; --card:#18202b;
+    --g-catalise:#5aa2e0; --g-micro:#3cc0bd; --g-suez:#86abdc; --g-airbus:#b69ad6; --g-autre:#9aa5b1;
+    --head:#a9cdf0; --on-acc:#0b1220; --pil-bg:#a9cdf0; --pil-txt:#0b1220; --lv-bg:#263548;
+    --chip-bg:#1d2733; --chip-line:#35506e; --nav-bg:rgba(15,20,27,.94); --grid:#222d3a;
+    --warn-bg:#3a3217; --warn-line:#6b5a1e; --warn-btn:#a98a2c; --bar-txt:#0b1220;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-wrap:break-word;margin:0;font-family:"Segoe UI",Calibri,system-ui,-apple-system,Arial,sans-serif;color:var(--txt);background:var(--bg);line-height:1.55;font-size:16px}
+a{color:var(--acc)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid #f5a524;outline-offset:2px;border-radius:4px}
+
+/* Navigation */
+nav.top{position:sticky;top:0;z-index:20;background:var(--nav-bg);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;gap:6px;align-items:center;overflow-x:auto;white-space:nowrap}
+nav.top strong{color:var(--head);margin-right:auto;padding:12px 0}
+nav.top a{color:var(--mut);text-decoration:none;padding:12px 10px;font-size:.92rem}
+nav.top a:hover{color:var(--head)}
+
+/* Hero */
+header.hero{background:linear-gradient(135deg,var(--navy) 0%,#27507f 100%);color:#fff;padding:56px 0 48px}
+.hero-top{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.switch{position:relative;flex:none;width:64px;height:32px;border-radius:999px;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.18);cursor:pointer;padding:0;display:flex;align-items:center;justify-content:space-between;color:#fff;font-size:1rem;line-height:1}
+.switch .ico{width:30px;text-align:center;position:relative;z-index:1;pointer-events:none}
+.switch .thumb{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.35)}
+.switch[aria-checked="true"]{background:rgba(0,0,0,.35)}
+.switch[aria-checked="true"] .thumb{transform:translateX(32px)}
+.switch:focus-visible{outline-offset:3px}
+.nav-switch{width:56px;height:28px;margin-left:10px;border-color:var(--chip-line);background:var(--acc-soft);color:var(--mut);font-size:.9rem}
+.nav-switch .ico{width:26px}
+.nav-switch .thumb{width:20px;height:20px;background:var(--acc)}
+.nav-switch[aria-checked="true"] .thumb{transform:translateX(28px)}
+.hero-switch{display:none}
+@media (max-width:640px){.hero-switch{display:flex}.nav-switch{display:none}}
+header.hero h1{margin:0;font-size:clamp(2rem,5vw,3rem);letter-spacing:.02em}
+header.hero .role{font-size:clamp(1.1rem,2.4vw,1.45rem);color:#a9cdf0;font-weight:600;margin:6px 0 18px}
+header.hero p.lead{max-width:760px;font-size:1.07rem;color:#e8eef6;margin:0 0 22px}
+.contact{display:flex;flex-wrap:wrap;gap:10px}
+.contact a{color:#fff;border:1px solid rgba(255,255,255,.45);padding:8px 14px;border-radius:999px;text-decoration:none;font-size:.93rem}
+.contact a:hover{background:rgba(255,255,255,.14)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:34px}
+.fact{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);padding:14px 16px}
+.fact b{display:block;font-size:1.02rem}
+.fact span{font-size:.88rem;color:#cfe0f3}
+
+section{padding:46px 0 8px}
+h2{color:var(--head);font-size:1.5rem;margin:0 0 6px;display:flex;align-items:center;gap:12px}
+h2::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--acc),transparent)}
+.hint{color:var(--mut);margin:0 0 18px;font-size:.95rem}
+
+/* Réalisations */
+.hl{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:14px}
+.hl article{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;border-top:4px solid var(--acc)}
+.hl h3{margin:0 0 6px;font-size:1.02rem;color:var(--head)}
+.hl p{margin:0 0 10px;font-size:.93rem;color:var(--mut)}
+.linkbtn{background:none;border:0;color:var(--acc);font:inherit;font-size:.9rem;padding:0;cursor:pointer;text-decoration:underline}
+
+/* Compétences */
+.fam{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:14px}
+.fam section{padding:0}
+.fam .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.fam h3{margin:0 0 10px;font-size:1rem;color:var(--head)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:.88rem;border:1px solid var(--line);background:var(--card);color:var(--txt);border-radius:999px;padding:5px 12px}
+button.chip{cursor:pointer;border-color:var(--chip-line);background:var(--acc-soft)}
+button.chip:hover{border-color:var(--acc)}
+button.chip[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--on-acc)}
+span.chip{background:var(--chip-bg);color:var(--mut)}
+.legend-note{font-size:.85rem;color:var(--mut);margin-top:12px}
+.filterbar{position:sticky;top:48px;z-index:10;margin:16px 0 0;background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:var(--radius);padding:10px 14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.filterbar[hidden]{display:none}
+.filterbar button{font:inherit;color:var(--txt);border:1px solid var(--warn-btn);background:var(--card);border-radius:8px;padding:4px 12px;cursor:pointer}
+
+/* Frise */
+.tl-scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px 10px}
+.tl{position:relative;min-width:760px}
+.tl-axis{position:relative;height:22px;border-bottom:1px solid var(--line)}
+.tl-axis span{position:absolute;top:0;font-size:.78rem;color:var(--mut);transform:translateX(-50%)}
+.tl-lanes{position:relative}
+.tl-grid{position:absolute;top:0;bottom:0;width:1px;background:var(--grid)}
+.bar{position:absolute;height:26px;border:0;border-radius:6px;color:var(--bar-txt);font:inherit;font-size:.78rem;padding:0 6px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;opacity:1;transition:opacity .2s,transform .15s}
+.bar:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.bar.dim{opacity:.2}
+.tl-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:.82rem;color:var(--mut)}
+.tl-legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
+/* Expériences */
+.tools{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.tools button{font:inherit;font-size:.9rem;color:var(--txt);border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 12px;cursor:pointer}
+.tools button:hover{border-color:var(--acc)}
+.exp{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--gc,var(--acc));border-radius:var(--radius);margin-bottom:12px;transition:opacity .2s}
+.exp.dim{opacity:.38}
+.exp-head{all:unset;box-sizing:border-box;display:block;width:100%;cursor:pointer;padding:16px 20px}
+.exp-head:focus-visible{outline:3px solid #f5a524;outline-offset:-3px;border-radius:var(--radius)}
+.row1{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.exp h3{margin:0;font-size:1.1rem;color:var(--head)}
+.dates{color:var(--mut);font-size:.9rem;white-space:nowrap}
+.co{color:var(--gc,var(--acc));font-weight:600;font-size:.95rem;margin-top:2px}
+.sum{color:var(--mut);font-size:.94rem;margin:6px 0 0}
+.toggle{display:inline-block;margin-top:8px;font-size:.85rem;color:var(--acc)}
+.toggle::before{content:"+ ";font-weight:700}
+.exp.open .toggle::before{content:"– "}
+.exp-body{padding:0 20px 18px}
+.exp-body[hidden]{display:none}
+.exp-body h4{margin:14px 0 4px;font-size:.95rem;color:var(--acc)}
+.exp-body ul{margin:0;padding-left:20px}
+.exp-body li{margin:4px 0;font-size:.95rem}
+.lv{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;border-radius:5px;padding:1px 6px;margin-right:6px;vertical-align:1px;background:var(--lv-bg);color:var(--head)}
+.lv.pil{background:var(--pil-bg);color:var(--pil-txt)}
+.lv.con{background:var(--acc);color:var(--on-acc)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{font:inherit;font-size:.78rem;border:1px solid var(--line);background:var(--chip-bg);color:var(--mut);border-radius:999px;padding:2px 10px;cursor:pointer}
+.tag:hover{border-color:var(--acc);color:var(--acc)}
+.tag.on{background:var(--acc);border-color:var(--acc);color:var(--on-acc)}
+.early{font-size:.92rem;color:var(--mut);margin:6px 0 0}
+
+/* Formation / divers */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:14px}
+.box2{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px}
+.box2 h3{margin:0 0 10px;color:var(--head);font-size:1.02rem}
+.box2 ul{list-style:none;margin:0;padding:0}
+.box2 li{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px dashed var(--line);font-size:.94rem}
+.box2 li:last-child{border:0}
+.box2 li span:last-child{color:var(--mut);text-align:right;flex-shrink:0;max-width:55%}
+footer{margin-top:50px;background:var(--navy);color:#dbe6f3;padding:30px 0;text-align:center}
+footer a{color:#fff}
+footer h2{color:#fff;justify-content:center;margin-bottom:8px}
+footer h2::after{display:none}
+
+@media print{
+  nav.top,.switch,.tools,.filterbar,.tl-scroll,.tl-legend,.hl .linkbtn,.legend-note,.toggle{display:none!important}
+  body{background:#fff;font-size:11pt}
+  header.hero{background:#fff!important;color:#000;padding:0 0 10px}
+  header.hero .role{color:var(--acc)} header.hero p.lead,.fact span{color:#333}
+  .contact a{color:#000;border:0;padding:0 12px 0 0}
+  .fact{background:#fff;border-color:var(--line);color:#000}
+  .exp-body[hidden]{display:block!important}
+  .exp{break-inside:avoid;box-shadow:none}
+  .exp.dim{opacity:1}
+  footer{background:#fff;color:#000} footer a{color:#000} footer h2{color:var(--navy)}
+}
+@media screen{
+  :root[data-theme="dark"] header.hero{background:linear-gradient(135deg,#16283f 0%,#1d3d63 100%)}
+  :root[data-theme="dark"] footer{background:#16283f}
+}
+@media (max-width:640px){
+  .wrap{padding:0 14px}
+  section{padding:34px 0 4px}
+  header.hero{padding:34px 0 30px}
+  header.hero p.lead{font-size:1rem}
+  h2{font-size:1.28rem}
+  nav.top a{padding:13px 9px}
+  .contact a{flex:1 1 100%;text-align:center;padding:11px 14px}
+  .chips{gap:7px}
+  .chip{padding:7px 12px}
+  .tag{padding:5px 11px;font-size:.8rem}
+  .tools button{flex:1 1 calc(50% - 5px);padding:10px 12px}
+  .filterbar{top:46px}
+  .exp{border-left-width:5px}
+  .exp-head{padding:14px 14px}
+  .exp-body{padding:0 14px 16px}
+  .exp-body ul{padding-left:18px}
+  .row1{gap:2px}
+  .dates{white-space:normal}
+  .fam .box,.box2,.hl article{padding:14px}
+  .box2 li{flex-direction:column;gap:0}
+  .box2 li span:last-child{text-align:left;max-width:100%}
+  .tl-scroll{padding:12px 10px 8px;-webkit-overflow-scrolling:touch}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Navigation principale">
+  <div class="wrap">
+    <strong>Louis Fourage</strong>
+    <a href="#realisations">Réalisations</a>
+    <a href="#competences">Compétences</a>
+    <a href="#parcours">Parcours</a>
+    <a href="#experiences">Expériences</a>
+    <a href="#formation">Formation</a>
+    <a href="#contact">Contact</a>
+    <button type="button" class="switch nav-switch" role="switch" aria-checked="false" aria-label="Mode sombre" title="Mode sombre">
+      <span class="ico" aria-hidden="true">&#9728;</span><span class="ico" aria-hidden="true">&#9790;</span><span class="thumb" aria-hidden="true"></span>
+    </button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <h1>Louis Fourage</h1>
+      <button type="button" class="switch hero-switch" role="switch" aria-checked="false" aria-label="Mode sombre" title="Mode sombre">
+        <span class="ico" aria-hidden="true">&#9728;</span><span class="ico" aria-hidden="true">&#9790;</span><span class="thumb" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="role">Chef de projet Data / Data Analyst freelance</div>
+    <p class="lead">À l'interface des équipes métiers et techniques, je cadre les besoins, structure et gouverne la donnée, puis conçois et déploie les outils de pilotage qui en découlent : modèles de données, reportings Power BI, applications et outils métiers.</p>
+    <div class="contact">
+      <a href="mailto:louis.fourage@catalise.eu">louis.fourage@catalise.eu</a>
+      <a href="tel:+33631618850">06 31 61 88 50</a>
+      <a href="https://www.linkedin.com/in/louisfourage/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="realisations">
+  <h2>Réalisations marquantes</h2>
+  <p class="hint">Quatre sujets représentatifs. Chaque carte ouvre la mission correspondante.</p>
+  <div class="hl" id="hl"></div>
+</section>
+
+<section id="competences">
+  <h2>Compétences</h2>
+  <p class="hint">Cliquer sur une compétence (en bleu) permet de filtrer les expériences ci-dessous qui la mettent en avant. Plusieurs sélections possibles.</p>
+  <div class="fam" id="fam"></div>
+  <div class="filterbar" id="filterbar" hidden role="status" aria-live="polite">
+    <span id="filtertxt"></span>
+    <button type="button" id="reset">Réinitialiser</button>
+  </div>
+</section>
+
+<section id="parcours">
+  <h2>Parcours</h2>
+  <p class="hint">Frise chronologique depuis 2016. Cliquez sur une barre pour ouvrir la mission.</p>
+  <div class="tl-scroll"><div class="tl" id="tl"></div></div>
+  <div class="tl-legend" id="tllegend"></div>
+</section>
+
+<section id="experiences">
+  <h2>Expériences</h2>
+  <p class="hint">Les mentions <span class="lv pil">Pilotage</span> <span class="lv con">Conception</span> <span class="lv">Participation</span> distinguent mon niveau d'implication.</p>
+  <div class="tools">
+    <button type="button" id="openall">Tout déplier</button>
+    <button type="button" id="closeall">Tout replier</button>
+  </div>
+  <div id="exps"></div>
+  <p class="early" id="early"></p>
+</section>
+
+<section id="formation">
+  <h2>Formation &amp; divers</h2>
+  <div class="two">
+    <div class="box2">
+      <h3>Formation</h3>
+      <ul>
+        <li><span><b>Maîtrise en gestion de projet</b> – ETS, Montréal</span><span>2015 – 2017</span></li>
+        <li><span><b>Diplôme d'ingénieur généraliste</b> – HEI, Lille</span><span>2013 – 2017</span></li>
+        <li><span><b>Classe préparatoire PTSI/PT</b> – Lycée Livet, Nantes</span><span>2011 – 2013</span></li>
+        <li><span><b>Baccalauréat scientifique</b> – Lycée Saint-Stanislas, Nantes</span><span>2011</span></li>
+      </ul>
+    </div>
+    <div class="box2">
+      <h3>Langues &amp; divers</h3>
+      <ul>
+        <li><span><b>Français</b></span><span>Langue maternelle</span></li>
+        <li><span><b>Anglais</b> (First Certificate)</span><span>Écrit et oral avancés</span></li>
+        <li><span><b>Permis</b></span><span>B, A2, bateau côtier</span></li>
+        <li><span><b>Certificats</b></span><span>Moniteur fédéral de voile, PSC1</span></li>
+        <li><span><b>Loisirs</b></span><span>Musique, sports nautiques et de glisse, cyclisme, yoga</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Parlons de vos besoins Data</h2>
+    <p><a href="mailto:louis.fourage@catalise.eu">louis.fourage@catalise.eu</a> · <a href="tel:+33631618850">06 31 61 88 50</a> · <a href="https://www.linkedin.com/in/louisfourage/" target="_blank" rel="noopener">LinkedIn</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- Thème ---------- */
+const themeBtns = document.querySelectorAll(".switch");
+function syncTheme(){
+  const dark = document.documentElement.getAttribute("data-theme") === "dark";
+  themeBtns.forEach(b => b.setAttribute("aria-checked", String(dark)));
+}
+themeBtns.forEach(b => b.addEventListener("click", () => {
+  const dark = document.documentElement.getAttribute("data-theme") !== "dark";
+  if (dark) document.documentElement.setAttribute("data-theme", "dark");
+  else document.documentElement.removeAttribute("data-theme");
+  try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch(e) {}
+  syncTheme();
+}));
+syncTheme();
+
+/* ---------- Données ---------- */
+const FAMILIES = [
+  {name:"Pilotage de projet", items:["Gestion et pilotage de projets","Coordination des parties prenantes","Cadrage fonctionnel","Suivi opérationnel et gestion des livrables","Jira","Confluence"]},
+  {name:"Data & Business Intelligence", items:["Data Analyse","Qualité et gouvernance des données","Modélisation architecture de données","Reporting et datavisualisation","Power BI","DAX","Power Query"], gray:["Microsoft Excel","VBA"]},
+  {name:"Solutions métiers & automatisation", items:["Power Apps","Power Automate","Automatisation des processus","Développement d'outils métiers"]}
+];
+
+const GROUPS = {
+  catalise:{label:"Catalise SAS (freelance)", color:"var(--g-catalise)"},
+  suez:{label:"SUEZ", color:"var(--g-suez)"},
+  micro:{label:"Consultant Data (multi-clients)", color:"var(--g-micro)"},
+  airbus:{label:"Airbus / ALTEN", color:"var(--g-airbus)"},
+  autre:{label:"Autres (Clarins, Fastercom, FOURAGE-CTI)", color:"var(--g-autre)"}
+};
+
+/* lv : pil = Pilotage, con = Conception, par = Participation */
+const EXPS = [
+ {id:"ref", g:"catalise", role:"Référent Data Réseau", co:"Freelance - La Poste Groupe – Équipe Réseaux & Télécoms", loc:"", start:"2026-01", end:null,
+  short:"Référent Data Réseau", sum:"Pilotage du stream Data / Référentiels / Outils du nouveau programme Réseau, et référent Data Groupe sur un appel d'offres européen.",
+  tags:["Gestion et pilotage de projets","Coordination des parties prenantes","Cadrage fonctionnel","Modélisation architecture de données","Développement d'outils métiers","Power BI"],
+  blocks:[
+   {h:"Stream Leader Data / Référentiels / Outils – phase de build du nouveau programme Réseau", b:[
+     ["pil","Pilotage du stream Data / Référentiels / Outils au sein du projet de migration du contrat mono-opérateur vers le nouveau contrat multi-opérateurs."],
+     ["con","Conception de l'architecture Data cible et du modèle de données du nouveau contrat : vision à 360° du pilotage de l'activité réseau, de la commande à la facturation (gestion du parc, incidents, observabilité, suivi opérationnel)."],
+     ["con","Conception et déploiement des outils métiers de pilotage : outil de commande, outil de remontées terrain, cockpit de pilotage."],
+     ["par","Définition et structuration des processus Data au service des activités opérationnelles et des différents streams métiers."]]},
+   {h:"Référent Data Groupe – appel d'offres européen stratégique (plusieurs centaines de millions d'euros)", b:[
+     ["par","Rédaction des exigences Data du cahier des charges, en cohérence avec les enjeux métiers."],
+     ["par","Participation aux ateliers avec les soumissionnaires : clarification des exigences, analyse critique des solutions proposées, évaluation de leur adéquation aux besoins du Groupe."],
+     ["par","Analyse, révision et notation des offres sur le périmètre Data."]]}
+  ]},
+ {id:"bgpn", g:"catalise", role:"Chef de projet Data Réseau", co:"Freelance - La Poste BGPN – Équipe Réseaux & Télécoms", loc:"", start:"2024-04", end:"2025-12",
+  short:"Chef de projet Data (BGPN)", sum:"Accompagnement data de la branche BGPN Réseau du Groupe La Poste sur plusieurs projets stratégiques de transformation.",
+  tags:["Gestion et pilotage de projets","Coordination des parties prenantes","Data Analyse","Qualité et gouvernance des données","Reporting et datavisualisation","Développement d'outils métiers","Power BI"],
+  blocks:[{h:"", b:[
+     ["con","Accompagnement data sur plusieurs projets stratégiques : migration des bureaux de poste vers la fibre, déploiement d'une solution de sécurisation des ports Ethernet, arrêt du cuivre."],
+     ["con","Développement d'une application de remontées terrain."],
+     ["con","Mise en place d'un processus de détection et de résiliation des infrastructures réseau non utilisées."],
+     ["con","Mise en place d'une démarche de contrôle et d'amélioration de la qualité des données stratégiques."]]}]},
+ {id:"suezfe", g:"suez", role:"Responsable Data Client France", co:"SUEZ France – R&V France Entreprise", loc:"Nantes", start:"2022-04", end:"2023-09",
+  short:"SUEZ – Responsable Data Client France", sum:"Data Owner France des données clients",
+  tags:["Gestion et pilotage de projets","Coordination des parties prenantes","Qualité et gouvernance des données","Data Analyse","Reporting et datavisualisation","Power BI"],
+  blocks:[{h:"", b:[
+     ["pil","Chef de projet du redressement de la qualité des données clients dans le cadre de la dématérialisation des factures."],
+     ["pil","Mise en place et animation de la gouvernance de la qualité de la donnée client."],
+     ["pil","Garant national des process métiers et SI liés à la donnée client."],
+     ["par","Participation à des projets nationaux de standardisation des processus métier et SI."],
+     ["con","Développement et déploiement de plusieurs reportings Power BI nationaux s'appuyant sur la donnée client."]]}]},
+ {id:"suezouest", g:"suez", role:"Responsable Amélioration Continue Process & Data", co:"SUEZ France – R&V Ouest Entreprise", loc:"Nantes", start:"2019-04", end:"2022-03",
+  short:"SUEZ – Amélioration continue process & data", sum:"Initialisation et déploiement du pilotage des activités opérationelles de collecte par la data",
+  tags:["Gestion et pilotage de projets","Coordination des parties prenantes","Qualité et gouvernance des données","Data Analyse","Reporting et datavisualisation","Power BI"],
+  blocks:[{h:"", b:[
+     ["par","Participation au déploiement du projet Valovisio : plateformes centralisées d'ordonnancement des tournées chauffeurs."],
+     ["con","Définition et mise en place de processus standard nationaux de gestion de la donnée opérationnelle."],
+     ["pil","Maintien de la qualité de la donnée et analyses au service de la performance opérationnelle du territoire Grand Ouest et national."],
+     ["con","Conception des standards de calcul et élaboration de plusieurs reportings Power BI nationaux, à destination de plusieurs centaines d'utilisateurs, sur des thématiques allant de la satisfaction client à la performance opérationnelle en passant par la qualité des données."]]}]},
+ {id:"micro", g:"micro", role:"Consultant Data", co:"Freelance - Multiples clients", loc:"", start:"2021-06", end:"2024-03",
+  short:"Consultant Data", sum:"Accompagnement d'entreprises sur la qualité des données, la datavisualisation et la conception d'outils de reporting.",
+  tags:["Cadrage fonctionnel","Data Analyse","Qualité et gouvernance des données","Reporting et datavisualisation","Développement d'outils métiers","Power BI"],
+  blocks:[{h:"", b:[
+     ["","Accompagnement d'entreprises sur des projets d'amélioration de la qualité des données et de datavisualisation, avec des missions de conception et d'optimisation d'outils ou de reporting pour les sociétés suivantes : Louis Vuitton · CEDEO (Saint-Gobain) · La Compagnie des Ateliers · 1020 Dégustation · Leclerc Drive relais · CETIH."],
+     ["","Exemple : conception et mise en place d'une stratégie data, suivie du déploiement d'un tableau de bord d'indicateurs commerciaux et financiers calculés automatiquement, pour le pilotage de l'activité quotidienne et annuelle."]]}]},
+ {id:"airbus", g:"airbus", role:"Consultant Supply Chain (ALTEN)", co:"Airbus", loc:"Bouguenais", start:"2018-02", end:"2019-03",
+  short:"Airbus – Supply Chain", sum:"Nouveaux moyens et processus logistiques liés à la montée en cadence de production.",
+  tags:["Gestion et pilotage de projets","Coordination des parties prenantes","Cadrage fonctionnel"],
+  blocks:[{h:"", b:[
+     ["con","Analyse, chiffrage, planification et déploiement des nouveaux moyens et processus logistiques liés à la montée en cadence de production."],
+     ["pil","Contractualisation des nouveaux flux avec le prestataire logistique."],
+     ["pil","Standardisation et amélioration continue du poste et des processus logistiques."],
+     ["pil","Gestion du changement dans un environnement industriel à fortes contraintes."]]}]},
+ {id:"cti", g:"autre", role:"Chargé de mission", co:"FOURAGE-CTI", loc:"La Haie-Fouassière", start:"2017-11", end:"2018-01",
+  short:"FOURAGE-CTI", sum:"Développement d'un outil de chiffrage automatique sous Excel (VBA) et participation à l'activité commerciale du pôle brasserie.",
+  tags:["Développement d'outils métiers","Cadrage fonctionnel","Microsoft Excel","VBA"],
+  blocks:[{h:"", b:[
+     ["con","Développement d'un outil de chiffrage automatique sous Excel (VBA) pour le bureau d'études brasserie."],
+     ["par","Participation à l'activité commerciale du pôle brasserie (prospection, suivi d'affaires, construction du nouveau catalogue)."]]}]},
+ {id:"clarins", g:"autre", role:"Analyste Supply Chain", co:"Groupe Clarins", loc:"Paris", start:"2017-01", end:"2017-08",
+  short:"Clarins – Supply Chain", sum:"Outils d'analyse des ruptures et des niveaux de stock, reporting à la direction.",
+  tags:["Data Analyse","Reporting et datavisualisation"],
+  blocks:[{h:"", b:[
+     ["","Amélioration des outils d'analyse des ruptures projetées et des niveaux de stock."],
+     ["","Analyse et préparation de rapports pour communication à la direction."],
+     ["","Gestion et répartition du stock mondial des références de PLV (publicité sur le lieu de vente) de la marque Clarins."]]}]},
+ {id:"faster", g:"autre", role:"Gestionnaire de projet (projet de fin de maîtrise)", co:"Fastercom Inc.", loc:"Montréal, Canada", start:"2016-09", end:"2016-12",
+  short:"Fastercom", sum:"Gestion d'un portefeuille de projets clients et rapport sur la stratégie d'affaires.",
+  tags:["Gestion et pilotage de projets","Cadrage fonctionnel"],
+  blocks:[{h:"", b:[
+     ["","Gestion du portefeuille de projets clients : animation commerciale (démarchage, présentation, recueil des besoins), suivi du développement, de l'implantation et des tests de la solution Faster TMS."],
+     ["","Planification de projet et implantation d'un processus de gestion des connaissances."],
+     ["","Rapport sur l'étude de la stratégie d'affaires de Fastercom ; analyse des processus commerciaux en vue de l'implantation d'un CRM."]]}]}
+];
+/* Remarque : les tags associent une compétence à une mission uniquement quand le texte source le justifie. */
+
+const HIGHLIGHTS = [
+ {t:"Appel d'offres européen", p:"Référent Data Groupe au sein d’un appel d’offres de plusieurs centaines de millions d’euros.", id:"ref"},
+ {t:"Pilotage du chantier Data d'un projet de transformation majeur", p:"Conception et implémentation du modèle de données cible, des outils et des processus data suite au démarrage d'un nouveau contrat stratégique.", id:"ref"},
+ {t:"Mise en place d'une gouvernance de donnée nationale", p:"Conception et déploiement d'une stratégie nationale de mise sous contrôle qualité des données stratégiques.", id:"suezfe"},
+ {t:"Outils de pilotages nationaux", p:"Mise en place de reportings Power BI nationaux (satisfaction client, performance opérationnelle, qualité des données) parmi les plus utilisés du groupe.", id:"suezouest"}
+];
+
+const EARLY = "Premières expériences : KIABI, chargé de projet Supply Chain (stage, Hem, juin – août 2015) · IDEA Groupe, manutentionnaire entrepôt (juillet – août 2014).";
+
+/* ---------- Utilitaires ---------- */
+const MONTHS = ["Janv.","Fév.","Mars","Avr.","Mai","Juin","Juil.","Août","Sept.","Oct.","Nov.","Déc."];
+const fmt = s => { const [y,m] = s.split("-"); return MONTHS[+m-1] + " " + y; };
+const toDate = s => { const [y,m] = s.split("-"); return new Date(+y, +m-1, 1); };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $ = (sel, root=document) => root.querySelector(sel);
+const allTags = new Set(EXPS.flatMap(e => e.tags));
+const active = new Set();
+
+/* ---------- Réalisations ---------- */
+$("#hl").innerHTML = HIGHLIGHTS.map(h =>
+  `<article><h3>${esc(h.t)}</h3><p>${esc(h.p)}</p><button type="button" class="linkbtn" data-open="${h.id}">Voir la mission</button></article>`).join("");
+
+/* ---------- Compétences ---------- */
+$("#fam").innerHTML = FAMILIES.map(f =>
+  `<div class="box"><h3>${esc(f.name)}</h3><div class="chips">` +
+  f.items.map(i => allTags.has(i)
+    ? `<button type="button" class="chip" data-skill="${esc(i)}" aria-pressed="false">${esc(i)}</button>`
+    : `<span class="chip">${esc(i)}</span>`).join("") +
+  (f.gray||[]).map(i => `<span class="chip">${esc(i)}</span>`).join("") +
+  `</div></div>`).join("");
+
+/* ---------- Expériences ---------- */
+const LV = {pil:["Pilotage","pil"], con:["Conception","con"], par:["Participation",""]};
+function endLabel(e){ return e.end ? fmt(e.end) : "Aujourd'hui"; }
+function dur(e){
+  const [y1,m1] = e.start.split("-").map(Number);
+  const now = new Date();
+  const [y2,m2] = e.end ? e.end.split("-").map(Number) : [now.getFullYear(), now.getMonth()+1];
+  const n = (y2-y1)*12 + (m2-m1) + 1;
+  return `(${n} mois)`;
+}
+$("#exps").innerHTML = EXPS.map(e => {
+  const body = e.blocks.map(b =>
+    (b.h ? `<h4>${esc(b.h)}</h4>` : "") +
+    `<ul>` + b.b.map(([k,t]) => `<li>${k ? `<span class="lv ${LV[k][1]}">${LV[k][0]}</span>` : ""}${esc(t)}</li>`).join("") + `</ul>`).join("");
+  return `<article class="exp" id="exp-${e.id}" data-id="${e.id}" style="--gc:${GROUPS[e.g].color}">
+    <button type="button" class="exp-head" aria-expanded="false" aria-controls="body-${e.id}">
+      <div class="row1"><h3>${esc(e.role)}</h3><span class="dates">${fmt(e.start)} – ${endLabel(e)} ${dur(e)}</span></div>
+      <div class="co">${esc(e.co)}${e.loc?" · "+esc(e.loc):""}</div>
+      <p class="sum">${esc(e.sum)}</p>
+      <span class="toggle">Voir le détail</span>
+    </button>
+    <div class="exp-body" id="body-${e.id}" hidden>${body}
+      <div class="tags">${e.tags.map(t => `<button type="button" class="tag" data-skill="${esc(t)}">${esc(t)}</button>`).join("")}</div>
+    </div>
+  </article>`;
+}).join("");
+$("#early").textContent = EARLY;
+
+function setOpen(card, open){
+  card.classList.toggle("open", open);
+  $(".exp-head", card).setAttribute("aria-expanded", open);
+  $(".exp-body", card).hidden = !open;
+  $(".toggle", card).textContent = open ? "Masquer le détail" : "Voir le détail";
+}
+function openExp(id){
+  const c = document.getElementById("exp-" + id);
+  if(!c) return;
+  setOpen(c, true);
+  c.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion:reduce)").matches ? "auto" : "smooth", block:"center"});
+}
+
+/* ---------- Frise ---------- */
+function buildTimeline(){
+  const now = new Date();
+  const t0 = new Date(2016, 8, 1), t1 = now, span = t1 - t0;
+  const pct = d => Math.max(0, Math.min(100, (d - t0) / span * 100));
+  const items = EXPS.map(e => ({e, a: toDate(e.start), b: e.end ? new Date(toDate(e.end).getFullYear(), toDate(e.end).getMonth()+1, 1) : now}))
+    .sort((x,y) => x.a - y.a);
+  const laneEnd = [];
+  items.forEach(it => {
+    let l = laneEnd.findIndex(end => it.a >= end);
+    if(l < 0){ l = laneEnd.length; laneEnd.push(0); }
+    // laisse une marge visuelle pour le libellé des barres courtes
+    laneEnd[l] = it.b; it.lane = l;
+  });
+  const H = 32, lanes = laneEnd.length;
+  let axis = "", grid = "";
+  for(let y = 2017; y <= now.getFullYear(); y++){
+    const p = pct(new Date(y,0,1));
+    axis += `<span style="left:${p}%">${y}</span>`;
+    grid += `<div class="tl-grid" style="left:${p}%"></div>`;
+  }
+  const bars = items.map(it => {
+    const left = pct(it.a), w = Math.max(1.4, pct(it.b) - left);
+    const txt = w > 12 ? esc(it.e.short) : "";
+    return `<button type="button" class="bar" data-open="${it.e.id}" data-id="${it.e.id}" style="left:${left}%;width:${w}%;top:${it.lane*H+4}px;background:${GROUPS[it.e.g].color}" title="${esc(it.e.short)} (${fmt(it.e.start)} – ${endLabel(it.e)})" aria-label="${esc(it.e.short)}, ${fmt(it.e.start)} à ${endLabel(it.e)}">${txt}</button>`;
+  }).join("");
+  $("#tl").innerHTML = `<div class="tl-axis">${axis}</div><div class="tl-lanes" style="height:${lanes*H+8}px">${grid}${bars}</div>`;
+  $("#tllegend").innerHTML = Object.values(GROUPS).map(g => `<span><i style="background:${g.color}"></i>${esc(g.label)}</span>`).join("");
+}
+buildTimeline();
+
+/* ---------- Filtre ---------- */
+function applyFilter(){
+  const on = active.size > 0;
+  document.querySelectorAll("[data-skill]").forEach(el => {
+    const sel = active.has(el.dataset.skill);
+    if(el.classList.contains("chip")) el.setAttribute("aria-pressed", sel);
+    else el.classList.toggle("on", sel);
+  });
+  let n = 0;
+  EXPS.forEach(e => {
+    const match = !on || e.tags.some(t => active.has(t));
+    if(match) n++;
+    const card = document.getElementById("exp-" + e.id);
+    card.classList.toggle("dim", !match);
+    const bar = document.querySelector(`.bar[data-id="${e.id}"]`);
+    if(bar) bar.classList.toggle("dim", !match);
+  });
+  const fb = $("#filterbar");
+  fb.hidden = !on;
+  if(on) $("#filtertxt").textContent = `Filtre : ${[...active].join(", ")} – ${n} mission${n>1?"s":""} concernée${n>1?"s":""}.`;
+}
+
+/* ---------- Événements ---------- */
+document.addEventListener("click", ev => {
+  const sk = ev.target.closest("[data-skill]");
+  if(sk){
+    const s = sk.dataset.skill;
+    active.has(s) ? active.delete(s) : active.add(s);
+    applyFilter();
+    return;
+  }
+  const op = ev.target.closest("[data-open]");
+  if(op){ openExp(op.dataset.open); return; }
+  const head = ev.target.closest(".exp-head");
+  if(head){ const c = head.closest(".exp"); setOpen(c, !c.classList.contains("open")); }
+});
+$("#reset").addEventListener("click", () => { active.clear(); applyFilter(); });
+$("#openall").addEventListener("click", () => document.querySelectorAll(".exp").forEach(c => setOpen(c, true)));
+$("#closeall").addEventListener("click", () => document.querySelectorAll(".exp").forEach(c => setOpen(c, false)));
+window.addEventListener("beforeprint", () => document.querySelectorAll(".exp").forEach(c => setOpen(c, true)));
+})();
+</script>
+</body>
+</html>
